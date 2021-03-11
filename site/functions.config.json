@@ -1,0 +1,34 @@
+{
+  "docs": [
+    {
+      "name": "使用教程",
+      "route": "README"
+    },
+    {
+      "name": "更新日志",
+      "route": "CHANGELOG"
+    }
+  ],
+  "functions": [
+    {
+      "name": "银行卡格式化",
+      "route": "formatBankNo"
+    },
+    {
+      "name": "日期格式化",
+      "route": "formatDate"
+    },
+    {
+      "name": "金额格式化",
+      "route": "formatMoney"
+    },
+    {
+      "name": "字符串脱敏处理",
+      "route": "formatToMask"
+    },
+    {
+      "name": "获取 URL 参数字段",
+      "route": "getUrlParameter"
+    }
+  ]
+}

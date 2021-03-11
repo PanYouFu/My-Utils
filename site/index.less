@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  font-family: Open Sans,Helvetica Neue,Arial,Hiragino Sans GB,Microsoft YaHei,sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.utils-home {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+.utils-banner {
+  box-sizing: border-box;
+  height: 65px;
+  line-height: 65px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  &_title {
+    font-size: 24px;
+    color: #398bf7;
+  }
+  &_btn {
+    font-size: 16px;
+    border: 1px solid #398bf7;
+    color: #398bf7;
+    height: 30px;
+    line-height: 30px;
+    width: 80px;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+.utils-cpt {
+  display: flex;
+  padding: 40px 0 70px;
+  &_menu {
+    width: 210px;
+    border-right: 1px solid #e4e4e4;
+    font-size: 14px;
+    color: #222;
+    box-sizing: border-box;
+    &_pos {
+      position: sticky;
+      top: 85px;
+    }
+    &_item {
+      height: 48px;
+      line-height: 48px;
+      padding-left: 55px;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f8ff;
+        color: #398bf7;
+      }
+      &:active {
+        border-right: 2px solid #398bf7;
+      }
+      &-active {
+        background-color: #f5f8ff;
+        color: #398bf7;
+        border-right: 2px solid #398bf7;
+      }
+    }
+    &_functions {
+      &_item {
+        height: 48px;
+        line-height: 48px;
+        cursor: pointer;
+        padding-left: 75px;
+        box-sizing: border-box;
+        &:hover {
+          background-color: #f5f8ff;
+          color: #398bf7;
+        }
+        &:active {
+          border-right: 2px solid #398bf7;
+        }
+        &-active {
+          background-color: #f5f8ff;
+          color: #398bf7;
+          border-right: 2px solid #398bf7;
+        }
+      }
+      &_title {
+        padding-left: 55px;
+        color: #999;
+        font-size: 14px;
+        font-weight: 400;
+        height: 48px;
+        line-height: 48px;
+      }
+    }
+  }
+  &_body {
+    flex: 1;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}

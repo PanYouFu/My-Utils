@@ -1,0 +1,64 @@
+// md 样式
+.markdown-body {
+  font-size: 14px;
+
+  h1,
+  h2,
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  a,
+  p {
+    font-size: 14px;
+  }
+
+  & .highlight {
+    // border-radius: 4px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  & pre {
+    background-color: #f8f8f8 !important;
+    border-radius: 4px !important;
+    padding: 16px !important;
+  }
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.phi-ripple {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #ffbb8c;
+  border-radius: 50%;
+}
+
+.mouse-down-on-ripple {
+  opacity: 0.3;
+  transform: scale(1);
+  animation: rtr-ripple-enter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mouse-up-on-ripple {
+  opacity: 0;
+  animation: rtr-ripple-exit 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes rtr-ripple-enter {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes rtr-ripple-exit {
+  0% { opacity: 0.3; }
+  100% { opacity: 0; }
+}

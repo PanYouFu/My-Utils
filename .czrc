@@ -1,0 +1,2 @@
+// path 用来指定适配器 这个文件是为了使用Commitizen，通过脚本命令提交代码
+{ "path": "cz-conventional-changelog" }

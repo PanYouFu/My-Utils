@@ -1,0 +1,363 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.8.10",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "my-utils!",
+  "docComment": "",
+  "name": "my-utils",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "my-utils!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "my-utils!formatBankNo:function(1)",
+          "docComment": "/**\n * @remarks\n *\n * 目前只支持一种格式，四位间隔\n *\n * @param bankNo - 输入正确的银行卡号字符串\n *\n * @returns 返回四位间隔的银行卡格式字符串\n *\n * @example\n * ```js\n * import { formatBankNo } from 'my-utils'\n * const bankNo = formatBankNo('661723452876123')\n * ```\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function formatBankNo(bankNo: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bankNo",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "formatBankNo"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "my-utils!formatDate:function(1)",
+          "docComment": "/**\n * @remarks\n *\n * 默认返回YYYY年MM月DD天格式\n *\n * @param date - 时间戳 type - 返回参数格式\n *\n * @returns YYYY年MM月DD日（默认） YYYY/MM/DD YYYY-MM-DD YYYY年M月D日 YYYY/M/D YYYY-M-D\n *\n * @example\n * ```js\n * import { formatDate } from 'my-utils'\n * const datestamp = new Date().getTime()\n * const date = formatDate(datestamp)\n * ```\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function formatDate(datestamp: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ", type?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "datestamp",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "parameterName": "type",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "name": "formatDate"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "my-utils!formatMoney:function(1)",
+          "docComment": "/**\n * 金额千分位格式化\n *\n * @param money - : 金额\n *\n * @param decimals - : 设置保留几位小数, 如果不传则不处理小数\n *\n * @param isRounding - : 是否四舍五入，默认为 true\n *\n * @param separator - : 千分位符号，默认为‘,’\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function formatMoney(money: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", decimals?: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ", isRounding?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ", separator?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "money",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "parameterName": "decimals",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "parameterName": "isRounding",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "separator",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              }
+            }
+          ],
+          "name": "formatMoney"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "my-utils!formatToMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function formatToMask(opts: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Opts",
+              "canonicalReference": "my-utils!~Opts:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "opts",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "formatToMask"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "my-utils!getUrlParameter:function(1)",
+          "docComment": "/**\n * 获取url?或#后参数方法 @example: http://xxx.com?a=P001#test?b=P002 Result: getUrlParameter('a') // 'P001' Result: getUrlParameter('b') // 'P002'\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function getUrlParameter(param: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "param",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "getUrlParameter"
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "my-utils!phUtils:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "phUtils: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    formatBankNo: typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "formatBankNo",
+              "canonicalReference": "my-utils!~formatBankNo:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    formatDate: typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "formatDate",
+              "canonicalReference": "my-utils!~formatDate:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    formatMoney: typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "formatMoney",
+              "canonicalReference": "my-utils!~formatMoney:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    getUrlParameter: typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "getUrlParameter",
+              "canonicalReference": "my-utils!~getUrlParameter:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    formatToMask: typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "formatToMask",
+              "canonicalReference": "my-utils!~formatToMask:function"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "phUtils",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 12
+          }
+        }
+      ]
+    }
+  ]
+}
