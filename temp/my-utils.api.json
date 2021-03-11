@@ -18,7 +18,7 @@
         {
           "kind": "Function",
           "canonicalReference": "my-utils!formatBankNo:function(1)",
-          "docComment": "/**\n * @remarks\n *\n * 目前只支持一种格式，四位间隔\n *\n * @param bankNo - 输入正确的银行卡号字符串\n *\n * @returns 返回四位间隔的银行卡格式字符串\n *\n * @example\n * ```js\n * import { formatBankNo } from 'my-utils'\n * const bankNo = formatBankNo('661723452876123')\n * ```\n *\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -45,7 +45,7 @@
             "startIndex": 3,
             "endIndex": 4
           },
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -61,7 +61,7 @@
         {
           "kind": "Function",
           "canonicalReference": "my-utils!formatDate:function(1)",
-          "docComment": "/**\n * @remarks\n *\n * 默认返回YYYY年MM月DD天格式\n *\n * @param date - 时间戳 type - 返回参数格式\n *\n * @returns YYYY年MM月DD日（默认） YYYY/MM/DD YYYY-MM-DD YYYY年M月D日 YYYY/M/D YYYY-M-D\n *\n * @example\n * ```js\n * import { formatDate } from 'my-utils'\n * const datestamp = new Date().getTime()\n * const date = formatDate(datestamp)\n * ```\n *\n * @beta\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -96,7 +96,7 @@
             "startIndex": 5,
             "endIndex": 6
           },
-          "releaseTag": "Beta",
+          "releaseTag": "Public",
           "overloadIndex": 1,
           "parameters": [
             {
@@ -119,7 +119,7 @@
         {
           "kind": "Function",
           "canonicalReference": "my-utils!formatMoney:function(1)",
-          "docComment": "/**\n * 金额千分位格式化\n *\n * @param money - : 金额\n *\n * @param decimals - : 设置保留几位小数, 如果不传则不处理小数\n *\n * @param isRounding - : 是否四舍五入，默认为 true\n *\n * @param separator - : 千分位符号，默认为‘,’\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -251,7 +251,7 @@
         {
           "kind": "Function",
           "canonicalReference": "my-utils!getUrlParameter:function(1)",
-          "docComment": "/**\n * 获取url?或#后参数方法 @example: http://xxx.com?a=P001#test?b=P002 Result: getUrlParameter('a') // 'P001' Result: getUrlParameter('b') // 'P002'\n */\n",
+          "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -293,12 +293,12 @@
         },
         {
           "kind": "Variable",
-          "canonicalReference": "my-utils!phUtils:var",
+          "canonicalReference": "my-utils!myUtils:var",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "phUtils: "
+              "text": "myUtils: "
             },
             {
               "kind": "Content",
@@ -351,7 +351,7 @@
             }
           ],
           "releaseTag": "Public",
-          "name": "phUtils",
+          "name": "myUtils",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 12

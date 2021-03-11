@@ -1,13 +1,4 @@
 
-/**
- * 关键信息隐藏
- * @param str 字符串
- * @param beginLen 字符串前面保留位数
- * @param endLen 字符串后面保留位数
- * @param replaceKey 替换为什么字符，默认为“*”
- * @param type 掩码类型 （姓名：name，手机号：tel，地址：address，银行卡号：bankNo，身份证号：id）
- * @returns {string}
- */
 interface Opts {
   str: string;
   frontLen?: number;

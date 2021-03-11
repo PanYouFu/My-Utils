@@ -11,5 +11,12 @@
   "dtsRollup": {
     "enabled": true,
     "untrimmedFilePath": "./dist/my-utils.d.ts"
+  },
+  "messages": {
+    "extractorMessageReporting": {
+      "ae-missing-release-tag": {
+        "logLevel": "none"
+      }
+    }
   }
 }

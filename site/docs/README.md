@@ -2,10 +2,10 @@
 
 ## 安装依赖
 
-切换私服
+切换npm服务器（淘宝镜像）
 
 ```js
-npm set registry http://10.181.4.80:4765/
+npm set registry ********
 ```
 
 安装方法库

@@ -4,12 +4,12 @@ import formatMoney from './formatMoney/index'
 import getUrlParameter from './getUrlParameter/index'
 import formatToMask from './formatToMask/index'
 
-const phUtils = {
+const myUtils = {
   formatBankNo,
   formatDate,
   formatMoney,
   getUrlParameter,
   formatToMask,
 }
-export default phUtils
+export default myUtils
 export { formatBankNo, formatDate, formatMoney, getUrlParameter, formatToMask }

@@ -1,26 +1,3 @@
-/**
- * @param
- *  date - 时间戳
- *  type - 返回参数格式
- * @returns
- *  YYYY年MM月DD日（默认）
- *  YYYY/MM/DD
- *  YYYY-MM-DD
- *  YYYY年M月D日
- *  YYYY/M/D
- *  YYYY-M-D
- * @example
- * ```js
- * import { formatDate } from 'my-utils'
- * const datestamp = new Date().getTime()
- * const date = formatDate(datestamp)
- * ```
- *
- * @remarks
- * 默认返回YYYY年MM月DD天格式
- *
- * @beta
- */
 function formatDate (datestamp: number, type?: string): string {
   const date = new Date(datestamp)
   const oYear = date.getFullYear()

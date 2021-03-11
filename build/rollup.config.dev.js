@@ -1,5 +1,4 @@
 const baseConfig = require('./rollup.config.base');
-const serve = require('rollup-plugin-serve');
 
 const { name } = require('../package.json');
 
@@ -26,10 +25,6 @@ module.exports = {
     }
   ],
   plugins: [
-    ...baseConfig.plugins,
-    // serve({
-    //   port: 8080,
-    //   contentBase: ['']
-    // })
+    ...baseConfig.plugins
   ]
 };

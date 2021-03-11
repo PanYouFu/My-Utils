@@ -7,8 +7,6 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { jsx, javascript, less } from 'react-syntax-highlighter/dist/esm/languages/prism'
 // import { Ripple } from './Ripple'
 
-// const md = require(`../src/formatBankNo/README.md`)
-
 export interface CptProps {
   md?: string;
 }

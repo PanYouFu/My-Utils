@@ -1,21 +1,23 @@
-import { series } from 'gulp'
+import { series } from 'gulp' // 将任务函数和/或组合操作组合成更大的操作，这些操作将按顺序依次执行
 import path from 'path'
-import fse from 'fs-extra'
-import chalk from 'chalk'
-import { rollup, watch } from 'rollup'
+import fse from 'fs-extra' // fs-extra是fs的一个扩展，提供了非常多的便利API，并且继承了fs所有方法和为fs方法添加了promise的支持
+import chalk from 'chalk' // chalk 包的作用是修改控制台中字符串的样式，包括：字体样式(加粗、隐藏等)、字体颜色、背景颜色
+import { rollup, watch } from 'rollup' // Rollup 也提供了 rollup.watch 函数，当它检测到磁盘上单个模块已经改变，它会重新构建你的文件束。
 import {
   Extractor,
   ExtractorConfig,
   ExtractorResult,
-} from '@microsoft/api-extractor'
-import conventionalChangelog from 'conventional-changelog'
-import rollupDevConfig from './build/rollup.config.dev'
-import rollupPrdConfigs from './build/rollup.config.prod'
+} from '@microsoft/api-extractor' // @microsoft/api-extractor 这个库是为了把所有的 .d.ts 合成一个，并且，还是可以根据写的注释自动生成文档
+// import conventionalChangelog from 'conventional-changelog'
+import rollupDevConfig from './build/rollup.config.dev' // 引入Rollup开发配置
+import rollupPrdConfigs from './build/rollup.config.prod' // 引入Rollup生产配置
 
+// 方法类型
 interface TaskFunc {
   (cb: ()=> void): void
 }
 
+// 打日志
 const log = {
   progress: (text: string) => {
     console.log(chalk.green(text))
@@ -25,6 +27,7 @@ const log = {
   },
 }
 
+// 简化路径引用
 const paths = {
   root: path.join(__dirname, '/'),
   dist: path.join(__dirname, '/dist'),
@@ -58,7 +61,7 @@ const buildPrdByRollup: TaskFunc = async (cb) => {
   log.progress('Rollup prd built successfully')
 }
 
-
+// rollup 打包 生产 监听文件变化
 const watchByRollup: TaskFunc = async (cb) => {
   const inputOptions = {
     input: rollupDevConfig.input,
@@ -91,11 +94,11 @@ const apifunc = async (type: string) => {
   const apiExtractorJsonPath: string = path.join(__dirname, './api-extractor.json')
   // 加载并解析 api-extractor.json 文件
   const extractorConfig: ExtractorConfig = await ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath)
-  // 判断是否存在 mian.d.ts 文件，这里必须异步先访问一边，不然后面找不到会报错
+  // 判断是否存在 my-utils.d.ts 文件，这里必须异步先访问一遍，不然后面找不到会报错
   const isExist: boolean = await fse.pathExists(extractorConfig.mainEntryPointFilePath)
 
   if (!isExist) {
-    log.error('API Extractor not find main.d.ts')
+    log.error('API Extractor not find my-utils.d.ts')
     return
   }
 
@@ -145,24 +148,24 @@ export const build = series(clearLibFile, buildPrdByRollup, complete)
 export const watchChanges = series(clearLibFile, watchByRollup, wait)
 
 // 自定义生成 changelog
-export const changelog: TaskFunc = async (cb) => {
-  const changelogPath: string = path.join(paths.root, 'CHANGELOG.md')
-  // 对命令 conventional-changelog -p angular -i CHANGELOG.md -w -r 0
-  const changelogPipe = await conventionalChangelog({
-    preset: 'angular',
-    releaseCount: 0,
-  })
-  changelogPipe.setEncoding('utf8')
+// export const changelog: TaskFunc = async (cb) => {
+//   const changelogPath: string = path.join(paths.root, 'CHANGELOG.md')
+//   // 对命令 conventional-changelog -p angular -i CHANGELOG.md -w -r 0
+//   const changelogPipe = await conventionalChangelog({
+//     preset: 'angular',
+//     releaseCount: 0,
+//   })
+//   changelogPipe.setEncoding('utf8')
 
-  const resultArray = ['# 公共方法库更新日志\n\n']
-  changelogPipe.on('data', (chunk) => {
-    // 原来的 commits 路径是进入提交列表
-    chunk = chunk.replace(/\/commits\//g, '/commit/')
-    resultArray.push(chunk)
-  })
-  changelogPipe.on('end', async () => {
-    await fse.createWriteStream(changelogPath).write(resultArray.join(''))
-    cb()
-  })
-}
+//   const resultArray = ['# 公共方法库更新日志\n\n']
+//   changelogPipe.on('data', (chunk) => {
+//     // 原来的 commits 路径是进入提交列表
+//     chunk = chunk.replace(/\/commits\//g, '/commit/')
+//     resultArray.push(chunk)
+//   })
+//   changelogPipe.on('end', async () => {
+//     await fse.createWriteStream(changelogPath).write(resultArray.join(''))
+//     cb()
+//   })
+// }
 

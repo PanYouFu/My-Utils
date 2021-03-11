@@ -1,11 +1,11 @@
 const path = require('path');
 const alias = require('rollup-plugin-alias');
-const { nodeResolve } = require('@rollup/plugin-node-resolve'); //加载查找外部模块
-const rollupTypescript = require('rollup-plugin-typescript2');
+const { nodeResolve } = require('@rollup/plugin-node-resolve'); // 加载查找外部模块
+const rollupTypescript = require('rollup-plugin-typescript2'); // 支持TS
 const { babel } = require('@rollup/plugin-babel');
 const { eslint } = require('rollup-plugin-eslint');
-const commonjs = require('rollup-plugin-commonjs');
-const replace = require('rollup-plugin-replace');
+const commonjs = require('rollup-plugin-commonjs'); // ES6模块的查找导入，但是npm中的大多数包都是以CommonJS模块的形式出现的，所以需要使用这个插件将CommonJS模块转换为 ES2015 供 Rollup 处理
+const replace = require('rollup-plugin-replace'); // 变量替换，可以将动态设置的变量提取出来在配置文件中设置
 const { DEFAULT_EXTENSIONS } = require('@babel/core');
 
 const resolveFile = function(filePath) {
